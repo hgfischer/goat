@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
      vb.gui = false
      vb.cpus = 1
-     vb.memory = 512
+     vb.memory = 1024
   end
 
   config.vm.synced_folder '.', '/opt/goat'
@@ -41,6 +41,7 @@ Vagrant.configure("2") do |config|
       sudo mv -v /etc/apt/apt.conf.d/70debconf /root/etc-apt-apt.conf.d-70debconf.bak
       sudo dpkg-reconfigure debconf -f noninteractive -p critical
       sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove
+      sudo apt-get install -y language-pack-en
       echo TODO
       touch $BOOTSTRAPPED
     else
