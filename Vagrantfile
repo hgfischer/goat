@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define 'node03', autostart: true do |host|
-    host.vm.hostname = 'node02'
+    host.vm.hostname = 'node03'
     host.vm.network 'private_network', ip: '10.20.30.43'
     # host.vm.network "forwarded_port", guest: 80, host: 8080
     # host.vm.provision 'file', source: 'someconfig.cfg', destination: '/tmp/someconfig.cfg'
